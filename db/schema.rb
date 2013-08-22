@@ -11,6 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20130822165157) do
+
+  create_table "stocks", :force => true do |t|
+    t.string   "ticker_symbol"
+    t.string   "name"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "stocks", ["ticker_symbol"], :name => "index_stocks_on_ticker_symbol", :unique => true
 
 end

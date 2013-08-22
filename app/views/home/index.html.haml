@@ -1,2 +1,8 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+.hero-unit.text-center
+  %h1 Making Sense Of The Market
+  .lead Search for S&P 500 Stock
+
+  = form_tag "?", method: :get do |f|
+    = text_field_tag :search, params[:search], placeholder: "Ticker Symbol"
+    %br
+    = submit_tag "Search Stocks", class: "btn btn-success btn-large"

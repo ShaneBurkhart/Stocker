@@ -1,3 +1,6 @@
+#!/bin/env ruby
+# encoding: utf-8
+
 stocks = [
   ["MMM", "3M Company  reports Industrials"],
   ["ABT", "Abbott Laboratories reports Health Care"],
@@ -503,5 +506,8 @@ stocks = [
 
 
 stocks.each do |stock|
-
+  Stock.find_or_create_by_ticker_symbol(
+    ticker_symbol: stock[0],
+    name: stock[1]
+  )
 end
