@@ -25,7 +25,7 @@ class Neuron
 
   def update_delta delta_from_output
     self.no_strategy_error if !@strategy
-    @delta = strategy.calculate_delta @output, delta_from_output
+    @delta = strategy.calculate_delta @output_value, delta_from_output
   end
 
   private
